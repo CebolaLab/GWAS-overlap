@@ -21,6 +21,8 @@ This can be due to technical variations in e.g. missing data, imputation quality
 
 * * * * SKIP * * * * 
 
+- add figure showing expanded sets for two GWAS with slight differences but majority overlap.
+
 ```R
 setwd('/rds/general/project/cebolalab_liver_regulomes/live/amp_t2d/LSECs/clustering_LSEC_CREs/Dorka_GWAS_overlaps/NAFLD_variants/NAFLD_Vujkovic')
 data=read.table('test')
@@ -32,5 +34,10 @@ colnames(data)=c('chr','start','end','lead','SNP')
 
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png" height="200">
 
+In this example, we can see several duplicated SNPs. E.g. rs132641 is present twice with two lead SNPs (rs132665 and rs132662). These two lead SNPs must therefore be labelling the same signal from two indpendent GWAS.
 
+To combine the data for this signal, we want to have:
+
+[1] the 'expanded' SNPs for this signal, which will consist of the merged lists of expanded SNPs from both studies (we expect this list to be almost identical, since the two lead SNPs will be in high LD, but there may be a couple of SNPs captured in only study as different lead SNPs were expanded).
+[2] **ONE** unique identifier to 'label' this signal. We will use one of the two lead SNPs (we will arbitrarily take the first one from the list).
 
