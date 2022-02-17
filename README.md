@@ -35,7 +35,7 @@ For the combined results, we want the complete list of SNPs from both studies, a
 
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure4.png" height="300">
 
-* * * * SKIP * * * * 
+# SKIP (insert plink expansion and concatenating files)
 
 - add figure showing expanded sets for two GWAS with slight differences but majority overlap.
 
