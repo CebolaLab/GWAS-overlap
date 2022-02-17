@@ -23,11 +23,14 @@ This can be due to technical variations in e.g. missing data, imputation quality
 
 Depending on the GWAS, either the lead SNP or credible sets may be provided.
 
-Independent GWAS which capture the SAME SIGNAL (i.e. an association caused by the same causal variant) may have different lead SNPs, as described above. These lead SNPs will be in *high LD*. See the example below.
+Independent GWAS which capture the SAME SIGNAL (i.e. an association caused by the same causal variant) may have different lead SNPs, as described above. These lead SNPs will be in *high LD*. See the example below, where the image shows a haplotype of high LD.
 
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure2.png" height="200">
 
-The complete 'signal' of association from each GWAS will consist of the credible set, or the expanded set of SNPs. Two GWAS which capture the same causal variant will have an *almost* identical list of SNPs making up the 'signal'. However, there might be one or two SNPs included in one GWAS and not the other. This may be, for example, if the LD from 
+The complete 'signal' of association from each GWAS will consist of the credible set, or the expanded set of SNPs. Two GWAS which capture the same causal variant will have an *almost* identical list of SNPs making up the "signal". However, there might be one or two SNPs included in one GWAS and not the other. This may be, for example, if there are several SNPs in high LD (r^2 > 0.8) with the GWAS 1 lead SNP, which do not reach the LD threshold for GWAS 2 lead SNP. In the example below, both GWAS 1 and GWAS 2 capture 2 SNPs in the expanded SNPs which were not captured by the other. 
+
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure3.png" height="200">
+
 
 However, the tw complete list of SNPs associated with the disease (the 'signal') ma
 
