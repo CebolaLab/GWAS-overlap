@@ -79,7 +79,7 @@ We now want to take ALL SNPs which are labelled with *either* of these lead SNPs
 These SNPs make up the 'combined list', as shown in the Figure above. We will replace the value in the 'lead SNPs' column with just one unique identifier (we will use the first lead SNP, rs132665).
 
 ```R
-#subset the dataframe for rows where th value in the 'lead' column is in our list of lead SNPs. Replace the value in the lead column ($lead) with the lead SNP from the first GWAS (leadSNPs[1])
+#subset the dataframe for rows where the value in the 'lead' column is in our list of lead SNPs. Replace the value in the lead column ($lead) with the lead SNP from the first GWAS (leadSNPs[1])
 data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
 ```
 
@@ -107,5 +107,16 @@ for(x in duplicated.snps[-1]){
         completed=c(completed,leadSNPs)
     }
 }
-
 ```
+
+Now, duplicated rows can be removed:
+
+```R
+data=unique(data)
+```
+
+Before:  <br /> 
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure7.png" height="200">
+
+After:  <br /> 
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure8.png" height="200">
