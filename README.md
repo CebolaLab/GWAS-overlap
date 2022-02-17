@@ -57,5 +57,36 @@ In this example, we can see several duplicated SNPs. E.g. rs132641 is present tw
 To combine the data for this signal, we want to have:
 
 1. The **SNP column** with the 'expanded' SNPs for this signal, which will consist of the merged lists of expanded SNPs from both studies (we expect this list to be almost identical, since the two lead SNPs will be in high LD, but there may be a couple of SNPs captured in only study as different lead SNPs were expanded).
-2. The **lead** column with **ONE** unique identifier to 'label' this signal. We will use one of the two lead SNPs (we will arbitrarily take the first one from the list).
+2. The **lead column** with **ONE** unique identifier to 'label' this signal. We will use one of the two lead SNPs (we will arbitrarily take the first one from the list).
+
+We can identify all the duplicated SNPs:
+
+```R
+duplicated.snps=as.character(subset(data$SNP,duplicated(data$SNP)))
+```
+They are: rs132641, rs1547014 and rs5752775.
+
+We will use these duplicated SNPs to identify instances where two GWAS capture the same signal (identified where the same SNP(s) are in the SNP lists for both studies), but have different lead SNPs. We want to later be able to identify these SNPs as coming from the same signal, so we just want one unique identifier we can later filter on. 
+
+Let's work with the first duplicated SNP:
+
+```R
+x=duplicated.snps[1] #rs132641
+```
+
+In this instance, our first duplicated SNP, rs132641, is matched with two lead SNPs: rs132665 and rs132662.
+We now want to take ALL SNPs which are labelled with *either* of these lead SNPs. 
+These SNPs make up the 'combined list', as shown in the Figure above. We will replace the value in the 'lead SNPs' column with just one unique identifier (we will use the first lead SNP, rs132665).
+
+```R
+#subset the dataframe for rows where th value in the 'lead' column is in our list of lead SNPs. Replace the value in the lead column ($lead) with the lead SNP from the first GWAS (leadSNPs[1])
+data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
+```
+
+Before:
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png" height="200">
+
+After:
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure5.png" height="200">
+
 
