@@ -37,7 +37,9 @@ For the combined results, we want the complete list of SNPs from both studies, a
 
 # SKIP (insert plink expansion and concatenating files)
 
-- add figure showing expanded sets for two GWAS with slight differences but majority overlap.
+## Data integration
+
+In practise, we will have a dataframe combining GWAS results. There should be a column for the SNPs and a column for the lead SNP which acts as the "label" for the GWAS signal they belong to (remember that each signal is in theory capturing just one causal variant). 
 
 ```R
 setwd('/rds/general/project/cebolalab_liver_regulomes/live/amp_t2d/LSECs/clustering_LSEC_CREs/Dorka_GWAS_overlaps/NAFLD_variants/NAFLD_Vujkovic')
@@ -54,6 +56,6 @@ In this example, we can see several duplicated SNPs. E.g. rs132641 is present tw
 
 To combine the data for this signal, we want to have:
 
-1. the 'expanded' SNPs for this signal, which will consist of the merged lists of expanded SNPs from both studies (we expect this list to be almost identical, since the two lead SNPs will be in high LD, but there may be a couple of SNPs captured in only study as different lead SNPs were expanded).
-2. **ONE** unique identifier to 'label' this signal. We will use one of the two lead SNPs (we will arbitrarily take the first one from the list).
+1. The **SNP column** with the 'expanded' SNPs for this signal, which will consist of the merged lists of expanded SNPs from both studies (we expect this list to be almost identical, since the two lead SNPs will be in high LD, but there may be a couple of SNPs captured in only study as different lead SNPs were expanded).
+2. The **lead** column with **ONE** unique identifier to 'label' this signal. We will use one of the two lead SNPs (we will arbitrarily take the first one from the list).
 
