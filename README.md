@@ -19,6 +19,18 @@ A GWAS **signal** is therefore hypothesised to "capture" or "result from" just *
 
 This can be due to technical variations in e.g. missing data, imputation quality, random fluctuations, LD structure. At a signal where SNPs are in complete LD (and therefore have the same level of association), small differences in the thousands of samples can be enough to make one SNP *slightly* more significant than another. These variations are random and therefore the lead SNP can differ between studies. 
 
+### Credible sets vs expanded SNPs 
+
+Depending on the GWAS, either the lead SNP or credible sets may be provided.
+
+Independent GWAS which capture the SAME SIGNAL (i.e. an association caused by the same causal variant) may have different lead SNPs, as described above. These lead SNPs will be in *high LD*. See the example below.
+
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure2.png" height="200">
+
+The complete 'signal' of association from each GWAS will consist of the credible set, or the expanded set of SNPs. Two GWAS which capture the same causal variant will have an *almost* identical list of SNPs making up the 'signal'. However, there might be one or two SNPs included in one GWAS and not the other. This may be, for example, if the LD from 
+
+However, the tw complete list of SNPs associated with the disease (the 'signal') ma
+
 * * * * SKIP * * * * 
 
 - add figure showing expanded sets for two GWAS with slight differences but majority overlap.
