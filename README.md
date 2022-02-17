@@ -21,3 +21,16 @@ This can be due to technical variations in e.g. missing data, imputation quality
 
 * * * * SKIP * * * * 
 
+```R
+setwd('/rds/general/project/cebolalab_liver_regulomes/live/amp_t2d/LSECs/clustering_LSEC_CREs/Dorka_GWAS_overlaps/NAFLD_variants/NAFLD_Vujkovic')
+data=read.table('test')
+#The file is concatenated from multiple GWAS, so other studies have been added as new rows
+
+#Name columns 
+colnames(data)=c('chr','start','end','lead','SNP')
+```
+
+![Figure1](https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png)
+
+
+
