@@ -13,6 +13,8 @@ A GWAS **signal** is therefore hypothesised to "capture" or "result from" just *
 ### Combining GWAS 
 
 - Two independent GWAS may observe significant association resulting from the same causal variant. They therefore observe the same "signal". 
-- GWAS typically label the signal using one unique identifier, typically the **lead SNP**.
-- The **lead SNP** is simply the SNP, in that study, which had the smallest p-value.
-- At the same signal, the **lead SNP** may be different in two independent GWAS. 
+- GWAS typically label each "signal" using one unique identifier, typically the **lead SNP**.
+- The **lead SNP** is simply the SNP which, in that study, which had the smallest p-value.
+- While the causal variant remains the same, two different GWAS may report two different **lead SNPs**. 
+
+This can be due to technical variations in e.g. missing data, imputation quality, random fluctuations, LD structure. At a signal where SNPs are in complete LD (and therefore have the same level of association), small differences in the thousands of samples can be enough to make one SNP *slightly* more significant than another. These variations are random and therefore the lead SNP can differ between studies. 
