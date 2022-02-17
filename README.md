@@ -31,8 +31,9 @@ The complete 'signal' of association from each GWAS will consist of the credible
 
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure3.png" height="200">
 
+For the combined results, we want the complete list of SNPs from both studies, as shown below. We will assign an arbitrary label to these SNPs which identifies them as belonging to the same signal (e.g. we could use the lead SNP from GWAS 1). 
 
-However, the tw complete list of SNPs associated with the disease (the 'signal') ma
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure4.png" height="200">
 
 * * * * SKIP * * * * 
 
