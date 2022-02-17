@@ -63,8 +63,8 @@ We can identify all the duplicated SNPs:
 
 ```R
 duplicated.snps=as.character(subset(data$SNP,duplicated(data$SNP)))
+#rs132641, rs1547014, rs5752775
 ```
-They are: rs132641, rs1547014 and rs5752775.
 
 We will use these duplicated SNPs to identify instances where two GWAS capture the same signal (identified where the same SNP(s) are in the SNP lists for both studies), but have different lead SNPs. We want to later be able to identify these SNPs as coming from the same signal, so we just want one unique identifier we can later filter on. 
 
@@ -89,4 +89,23 @@ Before:  <br />
 After:  <br /> 
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure6.png" height="200">
 
+We now want to apply this to the rest of the data.
+We can loop through the list of duplicated SNPs. However, some of these will below to the signal which we have just completed. We can therefore create a list of the lead SNPs which we have already merged. While looping through the duplicated SNPs, we will skip any which are assigned to a lead SNP which has already been merged.
 
+```R
+#Our list of lead SNPs which have been completed already from above
+completed=leadSNPs
+
+for(x in duplicated.snps[-1]){
+    #check the lead SNP for this duplicated SNP
+    leadSNPs=unique(data[data$SNP==x,]$lead)
+    #We want to test if the leadSNPs are in the completed list. We use an if statement which accepts a TRUE/FALSE. However, leadSNPs will be a vector of two or more values and an "if" statement needs just one TRUE/FALSE. We use the SUM command which will give the total number of TRUE values. If the sum is greater than zero, then the lead SNPs are already in our 'completed' list and should be skipped.
+    if(sum(leadSNPs %in% completed)==0){
+        #If this is a new signal, repeat the process and replace the lead column with the first lead SNP
+        data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
+        #Add the leadSNPs to the completed list
+        completed=c(completed,leadSNPs)
+    }
+}
+
+```
