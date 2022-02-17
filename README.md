@@ -18,3 +18,6 @@ A GWAS **signal** is therefore hypothesised to "capture" or "result from" just *
 - While the causal variant remains the same, two different GWAS may report two different **lead SNPs**. 
 
 This can be due to technical variations in e.g. missing data, imputation quality, random fluctuations, LD structure. At a signal where SNPs are in complete LD (and therefore have the same level of association), small differences in the thousands of samples can be enough to make one SNP *slightly* more significant than another. These variations are random and therefore the lead SNP can differ between studies. 
+
+* * * * SKIP * * * * 
+
