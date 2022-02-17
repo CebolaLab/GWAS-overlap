@@ -83,10 +83,10 @@ These SNPs make up the 'combined list', as shown in the Figure above. We will re
 data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
 ```
 
-Before:
+Before: \\
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png" height="200">
 
-After:
+After: \\
 <img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure5.png" height="200">
 
 
