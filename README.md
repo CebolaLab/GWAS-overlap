@@ -30,7 +30,7 @@ data=read.table('test')
 colnames(data)=c('chr','start','end','lead','SNP')
 ```
 
-<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png" width="200" height="200">
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png" height="200">
 
 
 
