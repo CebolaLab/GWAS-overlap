@@ -19,7 +19,7 @@ A GWAS **signal** is therefore hypothesised to "capture" or "result from" just *
 
 This can be due to technical variations in e.g. missing data, imputation quality, random fluctuations, LD structure. At a signal where SNPs are in complete LD (and therefore have the same level of association), small differences in the thousands of samples can be enough to make one SNP *slightly* more significant than another. These variations are random and therefore the lead SNP can differ between studies. 
 
-### Credible sets vs expanded SNPs 
+### Combining credible sets or expanded SNPs 
 
 Depending on the GWAS, either the lead SNP or credible sets may be provided.
 
