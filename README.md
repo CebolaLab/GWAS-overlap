@@ -8,7 +8,7 @@ What is a GWAS 'signal'?
 - All of the variants on the same **haplotype** as the causal SNP will therefore be observed to be *significantly associated* with disease.
 - This set of associated SNPs makes up a GWAS 'signal' 
 
-A GWAS **signal** is therefore hypothesised to capture just one **causal variant**. However, the observed results will consist of a set of associated SNPs in high LD, one of which should be the causal variant.
+A GWAS **signal** is therefore hypothesised to "capture" or "result from" just **one causal variant**. However, the observed results will consist of a set of associated SNPs in high LD, one of which should be the causal variant.
 
 ### Combining GWAS 
 
