@@ -84,9 +84,9 @@ data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
 ```
 
 Before:  <br /> 
-<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure1.png" height="200">
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure5.png" height="200">
 
 After:  <br /> 
-<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure5.png" height="200">
+<img src="https://github.com/CebolaLab/GWAS-overlap/blob/main/Figures/Figure6.png" height="200">
 
 
