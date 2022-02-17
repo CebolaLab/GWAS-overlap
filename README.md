@@ -9,3 +9,10 @@ What is a GWAS 'signal'?
 - This set of associated SNPs makes up a GWAS 'signal' 
 
 A GWAS **signal** is therefore hypothesised to capture just one **causal variant**. However, the observed results will consist of a set of associated SNPs in high LD, one of which should be the causal variant.
+
+### Combining GWAS 
+
+- Two independent GWAS may observe significant association resulting from the same causal variant. They therefore observe the same "signal". 
+- GWAS typically label the signal using one unique identifier, typically the **lead SNP**.
+- The **lead SNP** is simply the SNP, in that study, which had the smallest p-value.
+- At the same signal, the **lead SNP** may be different in two independent GWAS. 
