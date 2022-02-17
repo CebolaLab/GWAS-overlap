@@ -97,7 +97,7 @@ We can loop through the list of duplicated SNPs. However, some of these will bel
 completed=leadSNPs
 
 for(x in duplicated.snps[-1]){
-    #check the lead SNP for this duplicated SNP
+    #Save the lead SNPs for this duplicated SNP
     leadSNPs=unique(data[data$SNP==x,]$lead)
     #We want to test if the leadSNPs are in the completed list. We use an if statement which accepts a TRUE/FALSE. However, leadSNPs will be a vector of two or more values and an "if" statement needs just one TRUE/FALSE. We use the SUM command which will give the total number of TRUE values. If the sum is greater than zero, then the lead SNPs are already in our 'completed' list and should be skipped.
     if(sum(leadSNPs %in% completed)==0){
