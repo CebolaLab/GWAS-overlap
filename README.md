@@ -98,6 +98,7 @@ We can loop through the list of duplicated SNPs. However, some of these will bel
 ```R
 #Our list of lead SNPs which have been completed already from above
 completed=leadSNPs
+n.overlapping.signals=1
 
 for(x in duplicated.snps[-1]){
     #Save the lead SNPs for this duplicated SNP
@@ -108,9 +109,12 @@ for(x in duplicated.snps[-1]){
         data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
         #Add the leadSNPs to the completed list
         completed=c(completed,leadSNPs)
+        n.overlapping.signals=n.overlapping.signals+1
     }
 }
 ```
+
+`n.overlapping.signals` will give you the number of signals which overlapped between the studies.
 
 Now, duplicated rows can be removed:
 
