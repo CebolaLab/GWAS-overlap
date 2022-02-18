@@ -80,6 +80,7 @@ These SNPs make up the 'combined list', as shown in the Figure above. We will re
 
 ```R
 #subset the dataframe for rows where the value in the 'lead' column is in our list of lead SNPs. Replace the value in the lead column ($lead) with the lead SNP from the first GWAS (leadSNPs[1])
+leadSNPs=unique(data[data$SNP==x,]$lead)
 data[data$lead %in% leadSNPs,]$lead = leadSNPs[1]
 ```
 
